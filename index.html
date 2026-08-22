@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0c0610">
+<title>Komal — एक सपना, जो कभी बदला नहीं ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+:root{--rose:#ff6b9d;--rose2:#ffb4cf;--gold:#f7d58a;--ink:#fff8fb;--muted:#d9c7d0;--bg:#0c0610}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink)}
+body{font-family:'Noto Serif Devanagari',serif}
+button{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+.app{height:100dvh;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 20%,#3b1835 0,#160a18 43%,#070308 100%)}
+.app:before{content:"";position:absolute;inset:-35%;background:conic-gradient(from 0deg,#ff6b9d10,transparent 20%,#f7d58a08 40%,transparent 60%,#ff6b9d0d 80%,transparent);animation:spin 28s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#stars,#petals,#confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:twinkle 2.5s infinite}
+@keyframes twinkle{50%{opacity:.1;transform:scale(.2)}}
+.top{position:fixed;top:max(12px,env(safe-area-inset-top));left:16px;right:16px;z-index:50;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:'Great Vibes';font-size:28px;color:#ffd8e7;text-shadow:0 0 20px #ff6b9d66}
+.progress{position:fixed;left:0;bottom:0;height:3px;width:0;background:linear-gradient(90deg,var(--rose),var(--gold));z-index:60;transition:.8s}
+.scene{position:absolute;inset:0;padding:70px 18px 32px;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(20px) scale(.985);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.scene.active{opacity:1;visibility:visible;transform:none}
+.card{position:relative;width:min(900px,100%);height:100%;max-height:92dvh;overflow:auto;scrollbar-width:none;text-align:center;padding:10px 4px 25px}
+.card::-webkit-scrollbar{display:none}
+.kicker{font:10px Montserrat;letter-spacing:3px;text-transform:uppercase;color:#ffb8d0;margin:7px 0 14px}
+h1,h2{font-family:'Cormorant Garamond',serif;margin:0}
+h1{font-size:clamp(48px,13vw,92px);line-height:.92}
+h2{font-size:clamp(36px,10vw,68px);line-height:1}
+.script{font-family:'Great Vibes';font-size:clamp(42px,12vw,78px);color:#ffd0df;line-height:1}
+.sub{font-size:clamp(17px,4.6vw,23px);line-height:1.6;color:#f8e8ee;max-width:700px;margin:18px auto}
+.quote{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,6vw,39px);line-height:1.25;font-style:italic;color:#ffe0eb;max-width:760px;margin:20px auto}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 25px;border-radius:999px;background:linear-gradient(135deg,#ff5f98,#f5a18b);color:#fff;font:700 13px Montserrat;box-shadow:0 14px 40px #ff5f9840;cursor:pointer}
+.hint{font:10px Montserrat;color:#cdb8c3;margin-top:12px}
+.glass{background:#ffffff0c;border:1px solid #ffffff20;box-shadow:0 30px 90px #0008,inset 0 1px #ffffff12;backdrop-filter:blur(15px);border-radius:30px;padding:24px 18px}
+
+/* opening */
+.orb{width:145px;height:145px;margin:0 auto 24px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#fff,#ffd9e6 9%,#ff6b9d 34%,#68163e 67%,#21071b);box-shadow:0 0 70px #ff6b9d66,0 0 140px #ff6b9d20;animation:float 3s ease-in-out infinite}
+.orb span{font-size:62px;filter:drop-shadow(0 8px 15px #0007)}
+@keyframes float{50%{transform:translateY(-9px)}}
+
+/* journey */
+.journey{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;text-align:left;margin:18px auto;max-width:850px}
+.journey.reverse .jimg{order:2}.journey.reverse .jtext{order:1}
+.jimg{position:relative;min-height:300px;border-radius:24px;overflow:hidden;border:1px solid #ffffff20;box-shadow:0 25px 60px #0008}
+.jimg img{width:100%;height:100%;min-height:300px;display:block;object-fit:cover;filter:saturate(.9) contrast(1.02)}
+.jimg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,#07030899)}
+.jtext{padding:8px}
+.jtext h3{font-size:clamp(24px,5vw,38px);margin:0 0 10px;color:#ffd4e2}
+.jtext p{font-size:clamp(16px,3.9vw,20px);line-height:1.8;color:#f1e3e8;margin:0}
+.chapter{font:10px Montserrat;letter-spacing:3px;color:#f4bdcf;text-transform:uppercase;margin-bottom:8px}
+.quoteBox{margin:18px auto;max-width:760px;padding:20px;border-left:2px solid var(--rose);border-right:2px solid #f7d58a;border-radius:20px;background:#ffffff08}
+.quoteBox strong{display:block;font-size:clamp(21px,5vw,30px);line-height:1.6;color:#ffe3ed}
+
+/* final journey */
+.finalStory{max-width:800px;margin:auto}
+.finalStory p{font-size:clamp(18px,4.4vw,24px);line-height:1.8;color:#f7e8ed}
+.finalStory strong{color:#ffd0df}
+.finalStory .heroLine{font-family:'Great Vibes';font-size:clamp(48px,12vw,82px);color:#ffd0df;line-height:1.1}
+.todayPhoto{width:min(330px,80vw);aspect-ratio:3/4;border-radius:28px;overflow:hidden;margin:18px auto;border:1px solid #ffffff28;box-shadow:0 30px 80px #0009}
+.todayPhoto img{width:100%;height:100%;object-fit:cover}
+
+/* cake */
+.cake{width:240px;height:165px;margin:20px auto;position:relative}
+.layer{position:absolute;bottom:0;left:10px;width:220px;height:82px;border-radius:18px 18px 25px 25px;background:linear-gradient(#ffabc7,#e35f97);box-shadow:0 15px 30px #0006}
+.layer:before{content:"";position:absolute;top:-27px;left:0;width:220px;height:52px;border-radius:50%;background:#fff2f7}
+.drip{position:absolute;top:-3px;left:35px;width:22px;height:35px;background:#fff2f7;border-radius:0 0 12px 12px;box-shadow:55px 3px #fff2f7,110px -2px #fff2f7}
+.candle{position:absolute;bottom:67px;left:111px;width:18px;height:65px;border-radius:5px;background:repeating-linear-gradient(45deg,#fff 0 9px,#ff69a4 9px 18px)}
+.flame{position:absolute;bottom:125px;left:110px;width:20px;height:30px;border-radius:50%;background:#ffd35a;box-shadow:0 0 25px #ffb000,0 0 65px #ff6a00;animation:flick .14s infinite alternate}
+@keyframes flick{to{transform:scale(1.15) rotate(4deg)}}
+.blown .flame{display:none}
+
+/* balloons */
+.balloons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:25px 0}
+.balloon{width:68px;height:88px;border-radius:50%;cursor:pointer;box-shadow:inset -10px -13px 15px #0002,0 12px 25px #0005;animation:bob 2.5s ease-in-out infinite;position:relative}
+.balloon:after{content:"";position:absolute;left:50%;top:87px;width:1px;height:50px;background:#ffffff45}
+.balloon:nth-child(1){background:#ff629e}.balloon:nth-child(2){background:#8ecbff;animation-delay:.2s}.balloon:nth-child(3){background:#ffd166;animation-delay:.4s}.balloon:nth-child(4){background:#b58cff;animation-delay:.6s}
+@keyframes bob{50%{transform:translateY(-9px)}}
+.popped{animation:pop .35s forwards!important}@keyframes pop{to{transform:scale(1.8);opacity:0}}
+.balloonMsg{min-height:38px;color:#ffdce8;font-size:22px}
+
+/* gift */
+.shopGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:620px;margin:22px auto}
+.shop{padding:18px 8px;border:1px solid #ffffff1c;background:#ffffff08;border-radius:20px;color:#fff;text-decoration:none}
+.shop .emoji{font-size:30px;display:block}.shop b{font:700 13px Montserrat}.shop small{display:block;color:#cdb9c2;font:9px Montserrat;margin-top:5px}
+
+/* confetti */
+.conf{position:absolute;top:-30px;width:7px;height:17px;animation:fall 4s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(900deg);opacity:0}}
+
+@media(max-width:650px){
+ .scene{padding:66px 14px 28px}
+ .journey,.journey.reverse{grid-template-columns:1fr;gap:13px}
+ .journey.reverse .jimg,.journey.reverse .jtext{order:initial}
+ .jimg,.jimg img{min-height:245px}
+ .jtext{text-align:center;padding:2px 5px}
+ .jtext p{line-height:1.7}
+ .glass{padding:21px 14px}
+ .shopGrid{gap:9px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<div id="stars"></div><div id="petals"></div><div id="confetti"></div>
+<div class="top">
+  <div class="brand">For Komal ❤️</div>
+  
+</div>
+
+<div class="progress" id="progress"></div>
+
+<audio id="song" preload="auto" autoplay loop playsinline>
+  <source src="assets/kahne-ko-jashn-e-bahara-instrumental.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 1 -->
+<section class="scene active" id="s1">
+<div class="card">
+  <div class="orb"><span>🎁</span></div>
+  <div class="kicker">22 August • Her story • Her birthday</div>
+  <div class="script">For Komal</div>
+  <h1>एक सपना,<br>जो कभी बदला नहीं</h1>
+  <p class="sub">आज की कहानी किसी birthday की शुरुआत नहीं है…<br>यह उस लड़की की कहानी है जिसने रास्ता बदला, लेकिन अपना सपना नहीं।</p>
+  <button class="cta" onclick="begin()">Tap to begin her journey ✨</button>
+  <div class="hint">Your story begins… and the music begins with it. ❤️</div>
+</div>
+</section>
+
+<!-- 2 -->
+<section class="scene" id="s2">
+<div class="card">
+  <div class="kicker">22 अगस्त 2000</div>
+  <div class="script">It all began here…</div>
+  <h2>एक छोटी-सी बच्ची।<br>एक बड़ा-सा सपना।</h2>
+  <div class="journey">
+    <div class="jimg"><img src="assets/baby.jpg" alt="Komal as a baby"></div>
+    <div class="jtext">
+      <div class="chapter">Chapter 01 • The beginning</div>
+      <p>22 अगस्त 2000 को बिहार के एक आर्मी परिवार में एक बच्ची ने जन्म लिया।<br><br>शायद उसे तब कुछ पता नहीं था कि जिंदगी उसे कहाँ लेकर जाएगी, लेकिन बचपन से उसने एक सपना जरूर देखा था—<strong>एक दिन Army Officer बनना है।</strong></p>
+    </div>
+  </div>
+  <button class="cta" onclick="go(3)">Keep going →</button>
+</div>
+</section>
+
+<!-- 3 -->
+<section class="scene" id="s3">
+<div class="card">
+  <div class="kicker">The dream</div>
+  <div class="quoteBox">
+    <strong>“आर्मी के माहौल में पली-बढ़ी उस लड़की के लिए वर्दी सिर्फ एक कपड़ा नहीं थी।”</strong>
+  </div>
+  <p class="sub">वह <strong>सम्मान, अनुशासन, जिम्मेदारी और एक ऊँची पहचान</strong> का प्रतीक थी।</p>
+  <div class="journey reverse">
+    <div class="jimg"><img src="assets/dream.jpg" alt="Komal handwritten childhood dreams"></div>
+    <div class="jtext">
+      <div class="chapter">Chapter 02 • The dream</div>
+      <p>समय बीतता गया। पढ़ाई हुई, जिंदगी आगे बढ़ी और फिर उसने अपने करियर की शुरुआत की—बहुत साधारण तरीके से।</p>
+    </div>
+  </div>
+  <button class="cta" onclick="go(4)">The first step →</button>
+</div>
+</section>
+
+<!-- 4 -->
+<section class="scene" id="s4">
+<div class="card">
+  <div class="kicker">A humble beginning</div>
+  <div class="script">The first step</div>
+  <div class="journey">
+    <div class="jimg"><img src="assets/school.jpg" alt="Komal teaching her students"></div>
+    <div class="jtext">
+      <p>उसने बच्चों को <strong>घर पर tuition पढ़ाना शुरू किया।</strong><br><br>शायद उस समय किसी ने नहीं सोचा होगा कि यही छोटी-सी शुरुआत उसे एक दिन एक बड़ी professional journey तक लेकर जाएगी।</p>
+    </div>
+  </div>
+  <div class="quoteBox"><strong>छोटी शुरुआत। बड़ा सफर।</strong></div>
+  <button class="cta" onclick="go(5)">Then life changed…</button>
+</div>
+</section>
+
+<!-- 5 -->
+<section class="scene" id="s5">
+<div class="card glass">
+  <div class="kicker">Chapter 03 • The turn</div>
+  <div class="script">फिर जिंदगी ने करवट ली।</div>
+  <p class="sub">कुछ सपने परिस्थितियों के साथ बदल गए।<br>Army Officer बनने का रास्ता शायद वैसा नहीं रहा, जैसा उसने बचपन में सोचा था।</p>
+  <div class="quoteBox">
+    <strong>लेकिन एक चीज कभी नहीं बदली—<br>Officer बनने की चाह।</strong>
+  </div>
+  <p class="sub">क्योंकि उसके लिए Officer होना सिर्फ वर्दी पहनना नहीं था।</p>
+  <button class="cta" onclick="go(6)">What did “Officer” mean to her? →</button>
+</div>
+</section>
+
+<!-- 6 -->
+<section class="scene" id="s6">
+<div class="card">
+  <div class="kicker">What never changed</div>
+  <div class="script">Officer होना मतलब…</div>
+  <div class="glass" style="max-width:650px;margin:20px auto;text-align:left">
+    <p class="sub" style="margin:0">अपने पैरों पर खड़ा होना।<br><br>
+    अपने फैसले खुद लेना।<br><br>
+    जिम्मेदारियां उठाना।<br><br>
+    सम्मान के साथ जीना।<br><br>
+    और अपनी जिंदगी को एक ऊँचे मूल्य के साथ जीना।</p>
+  </div>
+  <button class="cta" onclick="go(7)">And then… she built her way →</button>
+</div>
+</section>
+
+<!-- 7 -->
+<section class="scene" id="s7">
+<div class="card">
+  <div class="kicker">Chapter 04 • The woman she became</div>
+  <div class="journey">
+    <div class="jimg"><img src="assets/today.jpg" alt="Komal today"></div>
+    <div class="jtext">
+      <h3>और फिर...</h3>
+      <p>जिस लड़की ने कभी बच्चों को घर पर पढ़ाकर अपने करियर की पहली सीढ़ी चढ़ी थी, आज वह एक अच्छी कंपनी में <strong>Software Engineer</strong> है।</p>
+    </div>
+  </div>
+  <div class="quoteBox"><strong>उसकी वर्दी बदल गई है।<br>उसका रास्ता बदल गया है।<br>उसका क्षेत्र बदल गया है।</strong></div>
+  <button class="cta" onclick="go(8)">But what about the dream? ❤️</button>
+</div>
+</section>
+
+<!-- 8 -->
+<section class="scene" id="s8">
+<div class="card">
+  <div class="kicker">The answer</div>
+  <div class="todayPhoto"><img src="assets/today.jpg" alt="Komal today"></div>
+  <div class="script">उसका सपना?</div>
+  <div class="quoteBox"><strong>वह आज भी वही है।</strong></div>
+  <p class="sub">आज वह एक और तरह की Officer बनने की राह पर है—<br><strong>अपने career की, अपने फैसलों की और अपनी जिंदगी की।</strong></p>
+  <button class="cta" onclick="go(9)">And the story is not over…</button>
+</div>
+</section>
+
+<!-- 9 -->
+<section class="scene" id="s9">
+<div class="card">
+  <div class="kicker">The next chapter</div>
+  <div class="finalStory">
+    <div class="heroLine">असल कहानी<br>अब शुरू हुई है।</div>
+    <p>और शायद बहुत जल्द वह उस मुकाम पर होगी, जहाँ वह सिर्फ एक अच्छी नौकरी नहीं कर रही होगी...</p>
+    <p>बल्कि <strong>एक ऐसी जिंदगी जी रही होगी, जिस पर उसे खुद गर्व होगा।</strong></p>
+    <div class="quoteBox"><strong>क्योंकि कुछ सपने पूरे होने के लिए नहीं बदलते...<br><br>वे बस अपना रास्ता बदलते हैं।</strong></div>
+  </div>
+  <button class="cta" onclick="go(10)">One last chapter… 🎂</button>
+</div>
+</section>
+
+<!-- 10 -->
+<section class="scene" id="s10">
+<div class="card">
+  <div class="kicker">22 August • 25 years</div>
+  <div class="script">Happy Birthday</div>
+  <h1>Komal ❤️</h1>
+  <p class="quote">“तुम्हारी कहानी अभी खत्म नहीं हुई है।<br>असल कहानी तो अब शुरू हुई है।”</p>
+  <div class="cake" id="cake"><div class="layer"></div><div class="drip"></div><div class="candle"></div><div class="flame"></div></div>
+  <p class="sub">अब एक wish करो… और candle blow करो. ✨</p>
+  <button class="cta" onclick="blow()">🕯️ Blow the Candle</button>
+  <p id="blowText" class="hint"></p>
+</div>
+</section>
+
+<!-- 11 -->
+<section class="scene" id="s11">
+<div class="card">
+  <div class="kicker">Because one celebration isn't enough</div>
+  <h2>🎈 A little love<br>for the birthday girl</h2>
+  <p class="sub">हर balloon में तुम्हारे लिए एक छोटा-सा message है।</p>
+  <div class="balloons">
+    <div class="balloon" onclick="pop(this,'तुम मेरी favourite person हो। ❤️')"></div>
+    <div class="balloon" onclick="pop(this,'तुम मेरे लिए घर हो। 🥰')"></div>
+    <div class="balloon" onclick="pop(this,'तुम मेरी खुशी हो। 😘')"></div>
+    <div class="balloon" onclick="pop(this,'और तुम मेरी forever हो। 💕')"></div>
+  </div>
+  <div class="balloonMsg" id="balloonMsg"></div>
+  <button class="cta" id="balloonBtn" style="display:none" onclick="go(12)">Cake cutting → 🎂</button>
+</div>
+</section>
+
+<!-- 12 -->
+<section class="scene" id="s12">
+<div class="card">
+  <div class="kicker">The birthday ending</div>
+  <div class="script">One more thing…</div>
+  <p class="quote">तुमने रास्ता बदला है, सपना नहीं।<br>और मुझे तुम पर बहुत गर्व है। ❤️</p>
+  <div class="glass">
+    <p class="sub" style="margin:0">Happy 25th Birthday, Komal.<br><br>Keep becoming the woman you always imagined yourself to be.</p>
+  </div>
+  <br>
+  <button class="cta" onclick="go(13)">Your final surprise 🎁</button>
+</div>
+</section>
+
+<!-- 13 -->
+<section class="scene" id="s13">
+<div class="card">
+  <div class="kicker">A birthday wish from your husband ❤️</div>
+  <div class="script">My Dear Komal,</div>
+  <div class="glass" style="max-width:760px;margin:20px auto;text-align:left">
+    <p class="sub" style="margin:0">
+      आज तुम्हारे 25वें जन्मदिन पर मैं बस इतना कहना चाहता हूँ कि
+      तुम्हारी कहानी को करीब से देखना मेरे लिए बहुत खूबसूरत अनुभव रहा है।
+      <br><br>
+      मैंने उस लड़की को देखा है जिसने कभी Army Officer बनने का सपना देखा था,
+      जिसने बच्चों को पढ़ाकर अपने सफर की शुरुआत की,
+      जिसने रास्ते बदलने पर भी अपने अंदर की Officer वाली सोच को कभी नहीं छोड़ा,
+      और जो आज एक अच्छी कंपनी में Software Engineer है।
+      <br><br>
+      तुम्हारा रास्ता भले बदल गया हो, लेकिन तुम्हारी मेहनत,
+      तुम्हारी ambition और अपने लिए एक बेहतर जिंदगी बनाने की चाह
+      आज भी वही है।
+      <br><br>
+      मुझे तुम पर सिर्फ इसलिए गर्व नहीं है कि तुम आज कहाँ पहुँच गई हो,
+      बल्कि इसलिए है कि <strong>तुम हर बार खुद को फिर से बनाती हो।</strong>
+      <br><br>
+      मेरी wish है कि तुम्हारी जिंदगी का अगला chapter
+      तुम्हारे अब तक के हर chapter से भी ज्यादा खूबसूरत हो।
+      तुम्हें वो हर मुकाम मिले जिसके लिए तुमने कभी मेहनत की है,
+      और उससे भी ज्यादा वो सुकून मिले जिसकी तुम हकदार हो।
+      <br><br>
+      <strong>Happy 25th Birthday, my love. ❤️</strong>
+      <br><br>
+      तुम्हारे सपने बदलें नहीं—बस बड़े होते जाएँ।
+      और जब भी तुम किसी नए मुकाम की तरफ बढ़ो,
+      याद रखना… मैं तुम्हारे साथ खड़ा हूँ।
+    </p>
+    <div style="font-family:'Great Vibes';font-size:42px;color:#ffc9dc;text-align:right;margin-top:15px">
+      — Your Husband ❤️
+    </div>
+  </div>
+  <button class="cta" onclick="go(14)">And finally… your gift 🎁</button>
+</div>
+</section>
+
+<!-- 14 -->
+<section class="scene" id="s14">
+<div class="card">
+  <div class="kicker">From your husband ❤️</div>
+  <div class="script">Your gift</div>
+  <p class="sub">आज कोई छोटा-सा gift नहीं चुनना।<br><strong>जो मन करे, वो चुनना। 😌</strong></p>
+  <div class="shopGrid">
+    <a class="shop" href="https://blinkit.com/" target="_blank"><span class="emoji">🛒</span><b>Blinkit</b><small>Whatever you want</small></a>
+    <a class="shop" href="https://www.amazon.in/" target="_blank"><span class="emoji">🛍️</span><b>Amazon</b><small>Pick your favourite</small></a>
+    <a class="shop" href="https://www.myntra.com/" target="_blank"><span class="emoji">👗</span><b>Myntra</b><small>Something beautiful</small></a>
+    <a class="shop" href="https://www.flipkart.com/" target="_blank"><span class="emoji">📦</span><b>Flipkart</b><small>Go for it 😎</small></a>
+  </div>
+  <div class="quoteBox"><strong>Order anything you want.<br>Your husband will pay. ❤️😂</strong></div>
+  <div class="hint">Happy 25th, my love. The next chapter is yours. ❤️</div>
+</div>
+</section>
+
+<script>
+const total=14;
+let current=1, popped=0, blown=false;
+let musicStarted=false;
+
+const $=id=>document.getElementById(id);
+
+function go(n){
+  document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
+  $('s'+n).classList.add('active');
+  current=n;
+  $('progress').style.width=((n-1)/(total-1)*100)+'%';
+  if(n===10) confetti();
+  if(n===14) confetti();
+}
+
+function begin(){
+  startMusic();
+  go(2);
+}
+
+const song=$('song');
+
+function startMusic(){
+  if(musicStarted) return;
+  song.volume=.62;
+  const p=song.play();
+  if(p){
+    p.then(()=>{musicStarted=true;}).catch(()=>{});
+  }
+}
+
+// Mobile browsers may block autoplay until the first user gesture.
+// There is intentionally NO music button: the first tap anywhere starts
+// the supplied song if autoplay was blocked.
+document.addEventListener('pointerdown',()=>{
+  if(!musicStarted){
+    song.volume=.62;
+    song.play().then(()=>{musicStarted=true;}).catch(()=>{});
+  }
+},{once:false,passive:true});
+
+function blow(){
+  if(blown)return;
+  blown=true;
+  $('cake').classList.add('blown');
+  $('blowText').textContent='Wish made. ✨❤️';
+  setTimeout(()=>go(11),1300);
+}
+
+function pop(el,msg){
+  if(el.classList.contains('popped'))return;
+  el.classList.add('popped');
+  popped++;
+  $('balloonMsg').textContent=msg;
+  if(popped===4) setTimeout(()=>{$('balloonBtn').style.display='inline-flex'},500);
+}
+
+function confetti(){
+  const box=$('confetti'); box.innerHTML='';
+  const colors=['#ff6b9d','#ffd98a','#ffffff','#9bcfff','#c7a3ff'];
+  for(let i=0;i<90;i++){
+    const c=document.createElement('i');
+    c.className='conf';
+    c.style.left=Math.random()*100+'%';
+    c.style.background=colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDelay=Math.random()*1.8+'s';
+    c.style.transform='rotate('+Math.random()*360+'deg)';
+    box.appendChild(c);
+  }
+  setTimeout(()=>box.innerHTML='',5200);
+}
+
+for(let i=0;i<90;i++){
+  const s=document.createElement('i');
+  s.className='star';
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  s.style.animationDelay=Math.random()*2.5+'s';
+  $('stars').appendChild(s);
+}
+</script>
+</div>
+</body>
+</html>
